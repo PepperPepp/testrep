@@ -5,14 +5,13 @@ using System;
 
 namespace TestProject
 {
-    class Program
+    class TestRunLogin
     {
         static IWebDriver driver = new ChromeDriver();
 
         [Test]
        public static void Main(string[] args)
         {
-           
             driver.Url = "http://test.spiders.pro/user";
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
