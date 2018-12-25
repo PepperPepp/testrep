@@ -30,8 +30,6 @@
                     </LinearGradientBrush>
                 </Canvas.Background>
             </Canvas>
-            <Button x:Name="startButton_Copy" Content="Finish!!!" HorizontalAlignment="Center" Margin="319,375,612.8,0.4" VerticalAlignment="Center" Width="93" FontWeight="Bold" Background="#FF3229C3" Height="35"/>
-            <Button x:Name="startButton_Copy1" Content="Finish!!!" HorizontalAlignment="Center" Margin="153,375,778.8,0.4" VerticalAlignment="Center" Width="93" FontWeight="Bold" Background="#FF3229C3" Height="35"/>
         </Grid>
     </StackPanel>
 </Page>
