@@ -112,8 +112,7 @@ namespace Save_the_Humans
             this._contentLoaded = true;
         }
 
-        internal System.Windows.Controls.Button startButton_Copy;
-        internal System.Windows.Controls.Button startButton_Copy1;
+        internal System.Windows.Controls.ContentControl Circle;
     }
 }
 
