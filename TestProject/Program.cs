@@ -7,18 +7,23 @@ namespace TestProject
 {
     class TestRunLogin
     {
-        static IWebDriver driver = new ChromeDriver();
-
-        [Test]
+  
        public static void Main(string[] args)
         {
-            driver.Url = "http://test.spiders.pro/user";
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            int UserAge = 18;
+            if (UserAge > 18)
+            {
+                Console.WriteLine("Ti uze vzrosliy");
+                string Password = Console.ReadLine();
 
-                driver.FindElement(By.Id("email")).SendKeys("subfeels@gmail.com");
-                driver.FindElement(By.Id("password")).SendKeys("73512365");
-                driver.FindElement(By.Id("login")).Click();
-           
+                if (Password == "12345")
+                {
+                    Console.WriteLine("PAssword is entered");
+                }
+            }
+
         }
+        
+
     }
 }
