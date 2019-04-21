@@ -13,32 +13,34 @@ class EntryPoint
     static IWebElement checkbox2;
     static IWebElement checkbox1;
     static IWebElement radioButton;
-
+    static IWebElement dropDownMenu;
+    static IWebElement element;
 
     public static void Main()
     {
 
-        string url = "http://testing.todvachev.com/special-elements/radio-button-test/";
-        string[] option = { "1", "3", "5" };
+        string url = "http://testing.todvachev.com/special-elements/drop-down-menu-test/";
+        string dropDownMenuelement = "#post-6 > div > p:nth-child(6) > select > option:nth-child(3)";
 
         driver.Navigate().GoToUrl(url);
-        for (int i = 0; i < option.Length; i++)
+
+        dropDownMenu = driver.FindElement(By.Name("DropDownTest"));
+        Console.WriteLine("The Selected value is : " + dropDownMenu.GetAttribute("value"));
+
+        element = driver.FindElement(By.CssSelector(dropDownMenuelement));
+        Console.WriteLine("The third option fro menu is : " + element.GetAttribute("value"));
+
+        element.Click();
+        Console.WriteLine("The Selected value is : " + dropDownMenu.GetAttribute("value"));
+
+        for (int i = 1; i <= 4; i++)
         {
-            radioButton = driver.FindElement(By.CssSelector("#post-10 > div > form > p:nth-child(6) > input[type=\"radio\"]:nth-child(" + option[i]+ ")"));
-
-            if (radioButton.GetAttribute("checked") == "true")
-            {
-                Console.WriteLine("The "+ (i + 1)+ " radiobutton is checked");
-            }
-            else
-            {
-                Console.WriteLine("this radiobutton is NOT checked");
-            }
+            dropDownMenuelement = "#post-6 > div > p:nth-child(6) > select > option:nth-child(" + i + ")";
+            element = driver.FindElement(By.CssSelector(dropDownMenuelement));
+            Console.WriteLine("The" + i +  "VALUE IS SELECTED : " + element.GetAttribute("value"));
         }
-
-    
         
-
+        
         Console.ReadLine();
         driver.Quit();
 
